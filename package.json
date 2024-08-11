@@ -11,8 +11,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build2": "set BUILD_PATH=./docs && react-scripts build",
+    "build": "set BUILD_PATH=./docs && react-scripts build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
