@@ -1,3 +1,7 @@
+# Это маленькое приложение для прослушивания интернет радиостанций создал FoxTail25
+
+# This small application for listening to Internet radio stations was created by FoxTail25
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
