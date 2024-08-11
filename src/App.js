@@ -1,9 +1,8 @@
-// import logo from './logo.svg';
 import { useState } from 'react';
-import './App.css';
 import { Player } from './component/Player';
 import  radioStation from './data/station.js';
 import SelectStation from './component/SelectStation.jsx';
+import Header from './component/Header.jsx';
 
 function App() {
 
@@ -12,9 +11,7 @@ let [selectedStation, setSelectedStation] = useState('')
 
   return (
     <div className="App">
-      <div>
-      RadioApp for my phone :)
-      </div>
+      <Header/>
       <SelectStation {...{radioStation, setSelectedStation}}/>
       <Player selectedStation={selectedStation}/>
     </div>
