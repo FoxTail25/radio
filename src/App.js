@@ -13,7 +13,7 @@ let [selectedStation, setSelectedStation] = useState('')
   return (
     <div className="App">
       <div>
-      RadioApp
+      RadioApp for my phone :)
       </div>
       <SelectStation {...{radioStation, setSelectedStation}}/>
       <Player selectedStation={selectedStation}/>
