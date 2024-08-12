@@ -4,7 +4,7 @@ import langReducer from '../features/lang/langSlice'
 import statiomReducer from '../features/station/stationSlice'
 
 export const store = configureStore({
-    reducer:{
+    reducer: {
         theme: themeReducer,
         lang: langReducer,
         station: statiomReducer,

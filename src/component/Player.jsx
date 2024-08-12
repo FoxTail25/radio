@@ -1,28 +1,32 @@
+import { useSelector } from 'react-redux'
 
 
-export const Player = ({ selectedStation }) => {
+export const Player = () => {
 
-    if (selectedStation) {
-        selectedStation = selectedStation[0]
+    const selectedStation = useSelector((state) => state.station.station)
+
+    if (selectedStation !== '') {
         console.log(selectedStation.radioDot.dot_1.href)
-    }else {
+    } else {
         console.log("радиостанция не выбрана")
     }
+
+    console.log('in_store', selectedStation)
 
 
     return <>
         <div>Player</div>
         {
-            selectedStation
+            selectedStation !== ''
                 ?
                 <div>
                     <div>
-                {selectedStation.name}
+                        {selectedStation.name}
                     </div>
-                <audio autoPlay controls src={selectedStation.radioDot.dot_1.href}></audio>
+                    <audio autoPlay controls src={selectedStation.radioDot.dot_1.href}></audio>
                 </div>
                 :
-<div>Радиостанция не выбрана</div>
-}
+                <div>Радиостанция не выбрана</div>
+        }
     </>
 }
