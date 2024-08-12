@@ -21,7 +21,7 @@ const radioStation = [
         }
     },
     {
-        category: ["relax"],
+        category: ["pop"],
         name: "Monte Carlo",
         radioDot: {
             dot_1: {
@@ -29,6 +29,19 @@ const radioStation = [
             },
             dot_2: {
                 href :"http://radio.gubernia.com:8000/radio9",
+            }
+        }
+
+    },
+    {
+        category: ["relax"],
+        name: "Эльдорадио",
+        radioDot: {
+            dot_1: {
+                href :"http://emgspb.hostingradio.ru/eldoradio128.mp3",
+            },
+            dot_2: {
+                href: "http://europaplus.hostingradio.ru:8000/eldoradio128.mp3",
             }
         }
 

@@ -16,7 +16,9 @@ export const Player = ({ selectedStation }) => {
             selectedStation
                 ?
                 <div>
+                    <div>
                 {selectedStation.name}
+                    </div>
                 <audio autoPlay controls src={selectedStation.radioDot.dot_1.href}></audio>
                 </div>
                 :
