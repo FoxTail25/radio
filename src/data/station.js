@@ -2,7 +2,8 @@ const radioStation = [
     {
         category: ["relax", "pop"],
         name: "шоколад",
-        img: 'img/station_logo/radio_shokolad_logo.svg',
+        img: 'https://chocoradio.ru/local/templates/site/assets/dist/images/logo.svg?6f4626bc151e087f9d70ff58807b939c',
+        // img: 'img/station_logo/radio_shokolad_logo.svg',
         radioDot: {
             dot_1: {
                 href: "https://choco.hostingradio.ru:10010/fm"
@@ -31,7 +32,7 @@ const radioStation = [
                 href: "https://montecarlo.hostingradio.ru/montecarlo96.aacp?5d63",
             },
             dot_2: {
-                href :"http://radio.gubernia.com:8000/radio9",
+                href: "http://radio.gubernia.com:8000/radio9",
             }
         }
 
@@ -41,7 +42,7 @@ const radioStation = [
         name: "Эльдорадио",
         radioDot: {
             dot_1: {
-                href :"http://emgspb.hostingradio.ru/eldoradio128.mp3",
+                href: "http://emgspb.hostingradio.ru/eldoradio128.mp3",
             },
             dot_2: {
                 href: "http://europaplus.hostingradio.ru:8000/eldoradio128.mp3",
