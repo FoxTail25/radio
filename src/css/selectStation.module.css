@@ -7,3 +7,6 @@
 .container button:first-child {
   margin-top: 10px;
 }
+.container button img {
+  width: 100%;
+}
