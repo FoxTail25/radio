@@ -5,13 +5,13 @@ export const Player = () => {
 
     const selectedStation = useSelector((state) => state.station.station)
 
-    if (selectedStation !== '') {
-        console.log(selectedStation.radioDot.dot_1.href)
-    } else {
-        console.log("радиостанция не выбрана")
-    }
+    // if (selectedStation !== '') {
+    //     console.log(selectedStation.radioDot.dot_1.href)
+    // } else {
+    //     console.log("радиостанция не выбрана")
+    // }
 
-    console.log('in_store', selectedStation)
+    // console.log('in_store', selectedStation)
 
 
     return <>

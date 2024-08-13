@@ -2,6 +2,7 @@ const radioStation = [
     {
         category: ["relax", "pop"],
         name: "шоколад",
+        img: './img/radio_shokolad_logo.svg',
         radioDot: {
             dot_1: {
                 href: "https://choco.hostingradio.ru:10010/fm"
@@ -14,6 +15,7 @@ const radioStation = [
     {
         category: ["relax"],
         name: "Relax.FM",
+        img: './img/radio_shokolad_logo.svg',
         radioDot: {
             dot_1: {
                 href: "https://pub0201.101.ru:443/stream/air/aac/64/200?5660"
@@ -23,6 +25,7 @@ const radioStation = [
     {
         category: ["pop"],
         name: "Monte Carlo",
+        img: './img/radio_shokolad_logo.svg',
         radioDot: {
             dot_1: {
                 href: "https://montecarlo.hostingradio.ru/montecarlo96.aacp?5d63",
