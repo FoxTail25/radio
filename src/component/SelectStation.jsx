@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { userSelected } from '../features/station/stationSlice'
 export default function SelectStation({ radioStation }) {
 
-    let allName = radioStation.map(e => {return {name:e.name, img:e.img}})
+    let allName = radioStation.map(e => { return { name: e.name, img: e.img } })
 
     const dispatch = useDispatch()
 
@@ -25,11 +25,12 @@ export default function SelectStation({ radioStation }) {
                             () => filteredRadioStation(e.name)
                         }
                     >
-                        <img src={e.img} alt='station_logo'/>
-                        {e.name}
+                        <img src={e.img} alt='station_logo' />
                     </button>
+                    <div>
+                        {e.name}
+                    </div>
                 </div>)
         }
     </div>
-
 }
