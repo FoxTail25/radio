@@ -2,7 +2,7 @@ const radioStation = [
     {
         category: ["relax", "pop"],
         name: "шоколад",
-        img: './img/radio_shokolad_logo.svg',
+        img: 'img/station_logo/radio_shokolad_logo.svg',
         radioDot: {
             dot_1: {
                 href: "https://choco.hostingradio.ru:10010/fm"

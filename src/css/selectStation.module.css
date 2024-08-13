@@ -1,9 +1,9 @@
-button {
+.container button {
   cursor: pointer;
   margin-bottom: 10px;
   width: 100px;
   padding: 5px;
 }
-button:first-child {
+.container button:first-child {
   margin-top: 10px;
 }/*# sourceMappingURL=selectStation.module.css.map */

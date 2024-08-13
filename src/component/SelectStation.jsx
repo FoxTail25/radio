@@ -1,5 +1,5 @@
 import React from 'react'
-import b from '../css/selectStation.module.css'
+import ss from '../css/selectStation.module.css'
 import { useDispatch } from 'react-redux'
 import { userSelected } from '../features/station/stationSlice'
 export default function SelectStation({ radioStation }) {
@@ -13,7 +13,7 @@ export default function SelectStation({ radioStation }) {
         dispatch(userSelected(userSelectedStation))
     }
 
-    return <>
+    return <div className={ss.container}>
         <h2>
             SelectStation
         </h2>
@@ -24,10 +24,12 @@ export default function SelectStation({ radioStation }) {
                         onClick={
                             () => filteredRadioStation(e.name)
                         }
-                    >{e.name}
+                    >
+                        <img src={e.img} alt='station_logo'/>
+                        {e.name}
                     </button>
                 </div>)
         }
-    </>
+    </div>
 
 }
