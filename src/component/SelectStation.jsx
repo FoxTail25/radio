@@ -15,22 +15,24 @@ export default function SelectStation({ radioStation }) {
 
     return <div className={ss.container}>
         <h2>
-            SelectStation
+            Select internet radio station
         </h2>
-        {
-            allName.map(e =>
-                <div key={e}>
-                    <button
-                        onClick={
-                            () => filteredRadioStation(e.name)
-                        }
-                    >
-                        <img src={e.img} alt='station_logo' />
-                    </button>
-                    <div>
-                        {e.name}
-                    </div>
-                </div>)
-        }
+        <div className={ss.radioStation_btn_container}>
+            {
+                allName.map(e =>
+                    <div key={e}>
+                        <button
+                            onClick={
+                                () => filteredRadioStation(e.name)
+                            }
+                        >
+                            <img src={e.img} alt='station_logo' />
+                        </button>
+                        <div>
+                            {e.name}
+                        </div>
+                    </div>)
+            }
+        </div>
     </div>
 }

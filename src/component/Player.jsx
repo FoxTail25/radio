@@ -5,14 +5,6 @@ export const Player = () => {
 
     const selectedStation = useSelector((state) => state.station.station)
 
-    // if (selectedStation !== '') {
-    //     console.log(selectedStation.radioDot.dot_1.href)
-    // } else {
-    //     console.log("радиостанция не выбрана")
-    // }
-
-    // console.log('in_store', selectedStation)
-
 
     return <>
         <div>Player</div>
@@ -23,7 +15,7 @@ export const Player = () => {
                     <div>
                         {selectedStation.name}
                     </div>
-                    <audio autoPlay controls src={selectedStation.radioDot.dot_1.href}></audio>
+                    <audio autoPlay controls preload='none' src={selectedStation.radioDot.dot_1.href}></audio>
                 </div>
                 :
                 <div>Радиостанция не выбрана</div>

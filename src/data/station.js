@@ -38,7 +38,7 @@ const radioStation = [
         
     },
     {
-        category: ["relax"],
+        category: ["шансон"],
         name: "Эльдорадио",
         img: 'img/station_logo/eldoradio.png',
         radioDot: {
@@ -47,6 +47,20 @@ const radioStation = [
             },
             dot_2: {
                 href: "http://europaplus.hostingradio.ru:8000/eldoradio128.mp3",
+            }
+        }
+
+    },
+    {
+        category: ["pop"],
+        name: "Авторадио",
+        img: 'img/station_logo/avtoradio-logo.png',
+        radioDot: {
+            dot_1: {
+                href: "https://pub0201.101.ru:443/stream/air/aac/64/100?d29e93b1",
+            },
+            dot_2: {
+                // href: "http://europaplus.hostingradio.ru:8000/eldoradio128.mp3",
             }
         }
 
