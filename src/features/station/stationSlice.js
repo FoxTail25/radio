@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import radioStation from '../../data/station.js';
 
 export const stationSlice = createSlice({
     name: 'selectedStation',
     initialState: {
-        station: ''
+        user_selected_station: '',
+        all_radioStation: radioStation,
     },
     reducers: {
-        userSelected: (state, action) => { state.station = action.payload },
+        userSelected: (state, action) => { state.user_selected_station = action.payload },
     },
 })
 

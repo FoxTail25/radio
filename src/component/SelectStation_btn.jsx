@@ -1,13 +1,11 @@
-import { useDispatch } from 'react-redux'
-import radioStation from '../data/station.js'
+import { useDispatch, useSelector } from 'react-redux'
 import { userSelected } from '../features/station/stationSlice'
 
 
 
 export default function SelectStation_btn({name, img}) {
 
-	console.log('name', name)
-	console.log('img', img)
+	const radioStation = useSelector((state) => state.radio_station.all_radioStation)
 
 	const dispatch = useDispatch()
 

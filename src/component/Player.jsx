@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 export const Player = () => {
 
-    const selectedStation = useSelector((state) => state.station.station)
+    const selectedStation = useSelector((state) => state.radio_station.user_selected_station)
 
 
     return <>
