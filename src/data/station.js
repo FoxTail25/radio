@@ -1,7 +1,7 @@
 const radioStation = [
     {
-        category: ["relax", "pop"],
         name: "Шоколад",
+        category: ["relax", "pop"],
         favorites:false,
         // img: 'https://chocoradio.ru/local/templates/site/assets/dist/images/logo.svg?6f4626bc151e087f9d70ff58807b939c',
         img: 'img/station_logo/shokolad.svg',
@@ -15,8 +15,8 @@ const radioStation = [
         }
     },
     {
-        category: ["relax"],
         name: "Relax.FM",
+        category: ["relax"],
         favorites:false,
         img: 'img/station_logo/relax_fm.svg',
         radioDot: {
@@ -26,8 +26,8 @@ const radioStation = [
         }
     },
     {
-        category: ["pop"],
         name: "Monte Carlo",
+        category: ["pop"],
         favorites:false,
         img: 'img/station_logo/monte_carlo.svg',
         radioDot: {
@@ -41,8 +41,8 @@ const radioStation = [
         
     },
     {
-        category: ["шансон"],
         name: "Эльдорадио",
+        category: ["шансон"],
         favorites:false,
         img: 'img/station_logo/eldoradio.png',
         radioDot: {
@@ -56,8 +56,8 @@ const radioStation = [
         
     },
     {
-        category: ["pop"],
         name: "Авторадио",
+        category: ["pop"],
         favorites:false,
         img: 'img/station_logo/avtoradio-logo.png',
         radioDot: {
@@ -71,18 +71,18 @@ const radioStation = [
 
     },
     {
-        category: ["pop", "dance"],
         name: "DFM",
+        category: ["pop", "dance"],
         favorites:false,
         img: 'img/station_logo/dfm.jpg',
         radioDot: {
             dot_1: {
-                href: "http://23.105.238.4/dfm128.mp3",
+                href: "http://23.105.238.4/dfm128\.mp3",
                 format: 'mp3',
                 location:"Moskow"
             },
             dot_2: {
-                href: "http://23.105.238.4/dfm96.aacp",
+                href: "http://23.105.238.4/dfm96\.aacp",
                 format: 'acc',
                 location:"Moskow",
             }
@@ -90,8 +90,8 @@ const radioStation = [
 
     },
     {
-        category: ["pop"],
         name: "LikeFM",
+        category: ["pop"],
         favorites:false,
         img: 'img/station_logo/like_fm.png',
         radioDot: {
