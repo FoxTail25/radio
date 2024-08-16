@@ -9,9 +9,9 @@ export default function SelectStation() {
     let allName = radioStation.map(e => { return { name: e.name, img: e.img } })
 
     return <div className='ss_container'>
-        <h2>
+        {/* <h2>
             Select internet radio station
-        </h2>
+        </h2> */}
         <div className='radioStation_btn_container'>
             {
                 allName.map(e => <SelectStation_btn key={e.name} {...e}/>)
