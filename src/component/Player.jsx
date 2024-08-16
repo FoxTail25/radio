@@ -8,11 +8,15 @@ export const Player = () => {
 
     let audio = useRef()
 
+    const title = document.querySelector('title')
+
 
 
     useLayoutEffect(() => {
         if (audio.current) {
             audio.current.play()
+            title.innerText = `радио ${selectedStation.name}`
+
         }
     }, [selectedStation])
 
