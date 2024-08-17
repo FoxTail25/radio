@@ -104,6 +104,48 @@ const radioStation = [
         }
 
     },
+    {
+        name: "Love",
+        category: ["pop"],
+        favorites:false,
+        img: 'img/station_logo/john-love2.png',
+        radioDot: {
+            dot_1: {
+                href: "https://centova.gr-net.gr/proxy/love/stream",
+                format: 'mp3',
+                location:"Греция, Солоники"
+            },
+        }
+
+    },
+    {
+        name: "Tranzistor1003",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://tranzistor1003.gr/wp-content/uploads/2022/06/300X300-TRANZISTOR-1003-LOGO-TRANSPARENT-1.png',
+        radioDot: {
+            dot_1: {
+                href: "https://metromedia.live24.gr/tranzistor1003thess",
+                format: 'mp3',
+                location:"Греция, Солоники",
+            },
+        }
+
+    },
+    {
+        name: "Радиокнига",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/kniga.jpg',
+        radioDot: {
+            dot_1: {
+                href: "https://bookradio.hostingradio.ru:8069/fm",
+                format: 'mp3',
+                location:"",
+            },
+        }
+
+    },
 ]
 
 export default radioStation

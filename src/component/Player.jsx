@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import {  useLayoutEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 
@@ -30,7 +30,7 @@ export const Player = () => {
                     <div>
                         Играет радио {selectedStation.name}
                     </div>
-                    <audio ref={audio} controls preload='metadata' src={selectedStation.radioDot.dot_1.href}></audio>
+                    <audio ref={audio} controls src={selectedStation.radioDot.dot_1.href}></audio>
                 </div>
                 :
                 <div>Радиостанция не выбрана</div>
