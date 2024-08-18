@@ -77,12 +77,12 @@ const radioStation = [
         img: 'img/station_logo/dfm.jpg',
         radioDot: {
             dot_1: {
-                href: "http://23.105.238.4/dfm128\.mp3",
+                href: "http://23.105.238.4/dfm128.mp3",
                 format: 'mp3',
                 location:"Moskow"
             },
             dot_2: {
-                href: "http://23.105.238.4/dfm96\.aacp",
+                href: "http://23.105.238.4/dfm96.aacp",
                 format: 'acc',
                 location:"Moskow",
             }

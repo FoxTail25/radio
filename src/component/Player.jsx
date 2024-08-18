@@ -1,16 +1,13 @@
 import {  useLayoutEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
+const title = document.querySelector('title')
 
 export const Player = () => {
 
     const selectedStation = useSelector((state) => state.radio_station.user_selected_station)
 
     let audio = useRef()
-
-    const title = document.querySelector('title')
-
-
 
     useLayoutEffect(() => {
         if (audio.current) {
