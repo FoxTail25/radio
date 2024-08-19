@@ -19,6 +19,8 @@ code {
 
 main {
   width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .setting_logo {
@@ -29,6 +31,10 @@ main {
   cursor: pointer;
 }
 
+.ss_container {
+  height: 70%;
+  overflow-y: scroll;
+}
 .ss_container .radioStation_btn_container {
   padding: 30px;
   display: flex;
