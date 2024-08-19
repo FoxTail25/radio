@@ -13,18 +13,22 @@ export const Player = () => {
 
     useLayoutEffect(() => {
         if (audio.current) {
-            audio.current.pause()
-            audio.current.play()
+            // audio.current.pause()
+            // audio.current.play()
             title.innerText = `радио ${selectedStation.name}`
+            window.addEventListener('online', ()=> console.log('online'))
+            window.addEventListener('offline', ()=> console.log('offline'))
 
         }
-    }, [selectedStation])
+    }, [selectedStation, wait])
+
+
 
     function reset() {
         setWait(wait++)
+        console.log('reset', wait)
     }
 
-    console.log('reset')
 
     return <>
         <div>Player</div>
@@ -41,7 +45,11 @@ export const Player = () => {
                         src={selectedStation.radioDot.dot_1.href}
 
                         // onPlaying={()=>console.log('onPlaying')}
-                        onCanPlay={()=>console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек')}
+                        onCanPlay={()=>{
+                            console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
+                            audio.current.play()
+                        }
+                        }
                         // onError={()=>console.log('Error')}
                         // onSeeking={()=>console.log('onSeeking')}
                         // onSeeked={()=>console.log('onSeeked')}
@@ -49,7 +57,7 @@ export const Player = () => {
                         onProgress={()=>console.log('onProgress')}
                         onSuspend={()=>console.log('onSuspend')}
                         //-----------------------------------------------
-                        // onStalled={()=>{console.log('onStalled'); reset()}}
+                        onStalled={()=>{console.log('onStalled'); reset()}}
                         onWaiting={()=>{console.log('onWaiting'); reset()}}
                     ></audio>
                 </div>
