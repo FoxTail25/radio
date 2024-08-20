@@ -9,15 +9,15 @@ export const Player = () => {
 
     let audio = useRef()
 
-    let [wait, setWait] = useState(0)
+    let [wait, setWait] = useState(true)
 
     useLayoutEffect(() => {
         if (audio.current) {
             // audio.current.pause()
             // audio.current.play()
             title.innerText = `радио ${selectedStation.name}`
-            window.addEventListener('online', ()=> console.log('online'))
-            window.addEventListener('offline', ()=> console.log('offline'))
+            // window.addEventListener('online', () => console.log('online'))
+            // window.addEventListener('offline', () => console.log('offline'))
 
         }
     }, [selectedStation, wait])
@@ -25,7 +25,8 @@ export const Player = () => {
 
 
     function reset() {
-        setWait(wait++)
+        selectedStation = ''
+        setWait(!wait)
         console.log('reset', wait)
     }
 
@@ -44,7 +45,7 @@ export const Player = () => {
                         src={selectedStation.radioDot.dot_1.href}
 
                         // onPlaying={()=>console.log('onPlaying')}
-                        onCanPlay={()=>{
+                        onCanPlay={() => {
                             console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
                             audio.current.play()
                         }
@@ -53,11 +54,11 @@ export const Player = () => {
                         // onSeeking={()=>console.log('onSeeking')}
                         // onSeeked={()=>console.log('onSeeked')}
                         //----------------------------------------------
-                        onProgress={()=>console.log('onProgress')}
-                        onSuspend={()=>console.log('onSuspend')}
+                        onProgress={() => console.log('onProgress')}
+                        onSuspend={() => console.log('onSuspend')}
                         //-----------------------------------------------
-                        onStalled={()=>{console.log('onStalled'); reset()}}
-                        onWaiting={()=>{console.log('onWaiting'); reset()}}
+                        onStalled={() => { console.log('onStalled'); reset() }}
+                        onWaiting={() => { console.log('onWaiting'); reset() }}
                     ></audio>
                 </div>
                 :
