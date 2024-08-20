@@ -30,8 +30,7 @@ export const Player = () => {
     }
 
 
-    return <>
-        <div>Player</div>
+    return <div className='player'>Player
         {
             selectedStation !== ''
                 ?
@@ -64,5 +63,5 @@ export const Player = () => {
                 :
                 <div>Радиостанция не выбрана</div>
         }
-    </>
+    </div>
 }
