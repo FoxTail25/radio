@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        <SettingBtn />
+        {/* <SettingBtn /> */}
         <SelectStation />
         <Player />
       </main>

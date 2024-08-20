@@ -121,7 +121,7 @@ const radioStation = [
 
     },
     {
-        name: "Tranzistor1003",
+        name: "Tranzistor100.3",
         category: ["pop"],
         favorites:false,
         img: 'https://tranzistor1003.gr/wp-content/uploads/2022/06/300X300-TRANZISTOR-1003-LOGO-TRANSPARENT-1.png',

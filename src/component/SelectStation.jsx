@@ -1,20 +1,37 @@
 import React from 'react'
 import SelectStation_btn from './SelectStation_btn'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import localDataWork from '../utils/localStor';
+import { favoriteFilter, resetFilter } from '../features/station/stationSlice';
 
 
 export default function SelectStation() {
 
     let radioStation = useSelector((state) => state.radio_station.all_radioStation)
     let allName = radioStation.map(e => { return { name: e.name, img: e.img } })
+    const dispatch = useDispatch()
+
+    
+    let favoriteArr = localDataWork.getFavoriteArr()
 
     return <div className='ss_container'>
-        {/* <h2>
-            Select internet radio station
-        </h2> */}
+        <div className='station_sort'>
+            <h2>
+                Сортировка станций
+            </h2>
+            <div>
+                <button
+                onClick={() => dispatch(resetFilter('Шоколад'))}
+                >все</button>
+                <button
+                onClick={() => dispatch(favoriteFilter(favoriteArr))}
+                >любимые</button>
+                <button>жанры</button>
+            </div>
+        </div>
         <div className='radioStation_btn_container'>
             {
-                allName.map(e => <SelectStation_btn key={e.name} {...e}/>)
+                allName.map(e => <SelectStation_btn key={e.name} {...e} />)
             }
         </div>
     </div>
