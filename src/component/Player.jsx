@@ -5,7 +5,7 @@ const title = document.querySelector('title')
 
 export const Player = () => {
 
-    const selectedStation = useSelector((state) => state.radio_station.user_selected_station)
+    let selectedStation = useSelector((state) => state.radio_station.user_selected_station)
 
     let audio = useRef()
 
