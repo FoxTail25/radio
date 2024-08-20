@@ -58,7 +58,7 @@ export const Player = () => {
                         onSuspend={() => console.log('onSuspend')}
                         //-----------------------------------------------
                         onStalled={() => { console.log('onStalled'); reset() }}
-                        onWaiting={() => { console.log('onWaiting'); reset() }}
+                        // onWaiting={() => { console.log('onWaiting'); reset() }}
                     ></audio>
                 </div>
                 :
