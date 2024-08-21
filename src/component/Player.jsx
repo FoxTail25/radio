@@ -95,8 +95,8 @@ export const Player = () => {
                     >
                         <img src={
                             buffer === 'играет'
-                                ? '/img/player/pause_btn.svg'
-                                : '/img/player/play_btn.svg'
+                                ? './img/player/pause_btn.svg'
+                                : './img/player/play_btn.svg'
                         }
                             width={30}
                             height={30}
