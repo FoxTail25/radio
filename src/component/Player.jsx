@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import localDataWork from '../utils/localStor'
-import { addFavoritStation, removeFavoritStation } from '../features/station/stationSlice'
+import { addFavoritStation, favoriteFilter, removeFavoritStation } from '../features/station/stationSlice'
 
 const title = document.querySelector('title')
 
@@ -9,8 +9,9 @@ export const Player = () => {
 
     let selectedStation = useSelector((state) => state.radio_station.user_selected_station)
     const dispatch = useDispatch()
+    let favoriteArr = localDataWork.getFavoriteArr()
 
-    console.log(selectedStation)
+    // console.log(selectedStation)
 
     let audio = useRef()
     let [buffer, setBuffer] = useState('загружается')
@@ -39,13 +40,14 @@ export const Player = () => {
     function favorit(e){
         let flag = e.target.innerText === "добавить в избранное"
         if(flag) {
-            console.log("добавить", selectedStation.name)
+            // console.log("добавить", selectedStation.name)
             localDataWork.addItemToFavoriteArr(selectedStation.name)
-            dispatch(addFavoritStation())
+            dispatch(addFavoritStation(), favoriteFilter(favoriteArr))
         } else {
-            console.log("удалить", selectedStation.name)
+            // console.log("удалить", selectedStation.name)
             localDataWork.removeItemFromFavoriteArr(selectedStation.name)
             dispatch(removeFavoritStation())
+            dispatch(favoriteFilter(favoriteArr))
         }
     }
 

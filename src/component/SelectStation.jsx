@@ -12,7 +12,7 @@ export default function SelectStation() {
     let allName = radioStation.map(e => { return { name: e.name, img: e.img } })
     const dispatch = useDispatch()
 
-    console.log(radioStation)
+    console.log("радио станции", radioStation)
     
     let favoriteArr = localDataWork.getFavoriteArr()
     
@@ -24,7 +24,7 @@ export default function SelectStation() {
             </h2>
             <div>
                 <button
-                onClick={() => dispatch(resetFilter('Шоколад'))}
+                onClick={() => dispatch(resetFilter())}
                 >все</button>
                 <button
                 onClick={() => dispatch(favoriteFilter(favoriteArr))}
