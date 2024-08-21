@@ -24,16 +24,12 @@ export const stationSlice = createSlice({
     reducers: {
         userSelected: (state, action) => { state.user_selected_station = action.payload },
 
-        favoriteFilter: (state) => {
+      
+        favoriteFilter: (state, action) => {
             state.all_radioStation = state.all_radioStation.filter(e =>
-                e.favorites === true
+                (action.payload).includes(e.name)
             )
         },
-        // favoriteFilter: (state, action) => {
-        //     state.all_radioStation = state.all_radioStation.filter(e =>
-        //         (action.payload).includes(e.name)
-        //     )
-        // },
         resetFilter: (state) => { state.all_radioStation = radioStation },
 
         addFavoritStation: (state) => {
