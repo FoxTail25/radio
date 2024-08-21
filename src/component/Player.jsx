@@ -11,19 +11,15 @@ export const Player = () => {
     const dispatch = useDispatch()
     let favoriteArr = localDataWork.getFavoriteArr()
 
-    // console.log(selectedStation)
 
     let audio = useRef()
     let [buffer, setBuffer] = useState('загружается')
 
-    // let [wait, setWait] = useState(true)
 
     useEffect(() => {
         if (audio.current) {
 
             title.innerText = `радио ${selectedStation.name}`
-
-            // setBuffer('загружается')
 
         }
     }, [selectedStation])
@@ -40,14 +36,13 @@ export const Player = () => {
     function favorit(e){
         let flag = e.target.innerText === "добавить в избранное"
         if(flag) {
-            // console.log("добавить", selectedStation.name)
+            console.log("добавить", selectedStation.name)
             localDataWork.addItemToFavoriteArr(selectedStation.name)
-            dispatch(addFavoritStation(), favoriteFilter(favoriteArr))
+            dispatch(addFavoritStation())
         } else {
-            // console.log("удалить", selectedStation.name)
+            console.log("удалить", selectedStation.name)
             localDataWork.removeItemFromFavoriteArr(selectedStation.name)
             dispatch(removeFavoritStation())
-            dispatch(favoriteFilter(favoriteArr))
         }
     }
 
@@ -62,17 +57,14 @@ export const Player = () => {
                     </div>
                     <audio
                         ref={audio}
-                        // controls
                         src={selectedStation.radioDot.dot_1.href}
                         preload='auto'
-
                         onPause={
                             () => setBuffer('выбрано')
                         }
                         onPlay={
                             () => setBuffer('играет')
                         }
-
                         onCanPlay={
                             () => {
                                 console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
@@ -90,7 +82,6 @@ export const Player = () => {
                                 // reset()
                             }
                         }
-
                         onWaiting={
                             () => {
                                 console.log('onWaiting');

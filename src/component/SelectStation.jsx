@@ -7,8 +7,7 @@ import { favoriteFilter, resetFilter } from '../features/station/stationSlice';
 
 export default function SelectStation() {
 
-    let rS = useSelector((state) => state.radio_station)
-    let radioStation = rS.all_radioStation
+    let radioStation = useSelector((state) => state.radio_station.all_radioStation)
     let allName = radioStation.map(e => { return { name: e.name, img: e.img } })
     const dispatch = useDispatch()
 
