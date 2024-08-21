@@ -1,37 +1,36 @@
-import { useLayoutEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import localDataWork from '../utils/localStor'
+import { addFavoritStation, removeFavoritStation } from '../features/station/stationSlice'
 
 const title = document.querySelector('title')
 
 export const Player = () => {
 
     let selectedStation = useSelector((state) => state.radio_station.user_selected_station)
+    const dispatch = useDispatch()
+
+    console.log(selectedStation)
 
     let audio = useRef()
     let [buffer, setBuffer] = useState('загружается')
 
-    let [wait, setWait] = useState(true)
+    // let [wait, setWait] = useState(true)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (audio.current) {
 
             title.innerText = `радио ${selectedStation.name}`
 
-            setBuffer('загружается')
+            // setBuffer('загружается')
 
         }
-    }, [selectedStation, wait])
+    }, [selectedStation])
 
 
 
-    function reset() {
-        selectedStation = ''
-        setWait(!wait)
-        console.log('reset', wait)
-    }
     function playStop() {
-        if (buffer == "играет") {
+        if (buffer === "играет") {
             audio.current.pause()
         } else {
             audio.current.play()
@@ -42,9 +41,11 @@ export const Player = () => {
         if(flag) {
             console.log("добавить", selectedStation.name)
             localDataWork.addItemToFavoriteArr(selectedStation.name)
+            dispatch(addFavoritStation())
         } else {
-            console.log("удалить")
+            console.log("удалить", selectedStation.name)
             localDataWork.removeItemFromFavoriteArr(selectedStation.name)
+            dispatch(removeFavoritStation())
         }
     }
 
@@ -100,19 +101,24 @@ export const Player = () => {
                         onClick={() => playStop()}
                     >
                         <img src={
-                            buffer == 'играет'
+                            buffer === 'играет'
                                 ? '/img/player/pause_btn.svg'
                                 : '/img/player/play_btn.svg'
                         }
                             width={30}
                             height={30}
+                            alt={
+                                buffer === 'играет'
+                                ? 'pause'
+                                : 'play'
+                            }
                         />
                     </button>
                     <div className='favorite'>
                         <button
                         onClick={(e) => favorit(e)}>
                             {
-                                selectedStation.favorite
+                                selectedStation.favorites
                                     ? "удалить из избранного"
                                     : "добавить в избранное"
                             }

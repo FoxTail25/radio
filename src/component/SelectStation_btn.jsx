@@ -3,7 +3,7 @@ import { userSelected } from '../features/station/stationSlice'
 
 
 
-export default function SelectStation_btn({name, img}) {
+export default function SelectStationBtn({name, img}) {
 
 	const radioStation = useSelector((state) => state.radio_station.all_radioStation)
 
