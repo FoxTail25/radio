@@ -36,11 +36,11 @@ export const Player = () => {
     function favorit(e){
         let flag = e.target.innerText === "добавить в избранное"
         if(flag) {
-            console.log("добавить", selectedStation.name)
+            // console.log("добавить", selectedStation.name)
             localDataWork.addItemToFavoriteArr(selectedStation.name)
             dispatch(addFavoritStation())
         } else {
-            console.log("удалить", selectedStation.name)
+            // console.log("удалить", selectedStation.name)
             localDataWork.removeItemFromFavoriteArr(selectedStation.name)
             dispatch(removeFavoritStation())
         }
@@ -78,13 +78,13 @@ export const Player = () => {
                         //-----------------------------------------------
                         onStalled={
                             () => {
-                                console.log('onStalled'); 
+                                // console.log('onStalled'); 
                                 // reset()
                             }
                         }
                         onWaiting={
                             () => {
-                                console.log('onWaiting');
+                                // console.log('onWaiting');
                                 // reset() 
                             }
                         }

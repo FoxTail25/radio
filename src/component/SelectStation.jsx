@@ -11,7 +11,7 @@ export default function SelectStation() {
     let allName = radioStation.map(e => { return { name: e.name, img: e.img } })
     const dispatch = useDispatch()
 
-    console.log("радио станции", radioStation)
+    // console.log("радио станции", radioStation)
     
     let favoriteArr = localDataWork.getFavoriteArr()
     
