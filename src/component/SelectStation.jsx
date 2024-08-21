@@ -12,22 +12,26 @@ export default function SelectStation() {
     const dispatch = useDispatch()
 
     // console.log("радио станции", radioStation)
-    
+
     let favoriteArr = localDataWork.getFavoriteArr()
-    
+
 
     return <div className='ss_container'>
         <div className='station_sort'>
             <h2>
-                Сортировка станций
+                Интернет радиостанции
             </h2>
             <div>
                 <button
-                onClick={() => dispatch(resetFilter())}
-                >все</button>
+                    className='favorite__btn'
+                    onClick={() => dispatch(resetFilter())}>
+                    все
+                </button>
                 <button
-                onClick={() => dispatch(favoriteFilter(favoriteArr))}
-                >любимые</button>
+                    className='favorite__btn'
+                    onClick={() => dispatch(favoriteFilter(favoriteArr))}>
+                    избранные
+                </button>
                 {/* <button>жанры</button> */}
             </div>
         </div>

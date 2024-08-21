@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import localDataWork from '../utils/localStor'
-import { addFavoritStation, favoriteFilter, removeFavoritStation } from '../features/station/stationSlice'
+import { addFavoritStation, removeFavoritStation } from '../features/station/stationSlice'
 
 const title = document.querySelector('title')
 
@@ -9,22 +9,16 @@ export const Player = () => {
 
     let selectedStation = useSelector((state) => state.radio_station.user_selected_station)
     const dispatch = useDispatch()
-    let favoriteArr = localDataWork.getFavoriteArr()
-
+    // let favoriteArr = localDataWork.getFavoriteArr()
 
     let audio = useRef()
     let [buffer, setBuffer] = useState('загружается')
 
-
     useEffect(() => {
         if (audio.current) {
-
             title.innerText = `радио ${selectedStation.name}`
-
         }
     }, [selectedStation])
-
-
 
     function playStop() {
         if (buffer === "играет") {
@@ -33,14 +27,12 @@ export const Player = () => {
             audio.current.play()
         }
     }
-    function favorit(e){
+    function favorit(e) {
         let flag = e.target.innerText === "добавить в избранное"
-        if(flag) {
-            // console.log("добавить", selectedStation.name)
+        if (flag) {
             localDataWork.addItemToFavoriteArr(selectedStation.name)
             dispatch(addFavoritStation())
         } else {
-            // console.log("удалить", selectedStation.name)
             localDataWork.removeItemFromFavoriteArr(selectedStation.name)
             dispatch(removeFavoritStation())
         }
@@ -102,14 +94,15 @@ export const Player = () => {
                             height={30}
                             alt={
                                 buffer === 'играет'
-                                ? 'pause'
-                                : 'play'
+                                    ? 'pause'
+                                    : 'play'
                             }
                         />
                     </button>
                     <div className='favorite'>
                         <button
-                        onClick={(e) => favorit(e)}>
+                            className='favorite__btn favorite__btn_addDel'
+                            onClick={(e) => favorit(e)}>
                             {
                                 selectedStation.favorites
                                     ? "удалить из избранного"

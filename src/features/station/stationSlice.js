@@ -28,8 +28,8 @@ export const stationSlice = createSlice({
         addFavoritStation: (state) => {
 
             state.user_selected_station.favorites = true; //Добавляем текущей станции признак избранной
-
-            let all_st = state.all_radioStation.some(e => e.name === state.user_selected_station.name); // проверяем есть ли в текущем списке станций добавляемая станция (если текущей нет, то это полный список.)
+            let all_st = state.all_radioStation.length === radioStation.length
+            // let all_st = state.all_radioStation.some(e => e.name === state.user_selected_station.name); // проверяем есть ли в текущем списке станций добавляемая станция (если текущей нет, то это полный список.)
 
             if(all_st) {
                 //Если станция есть в текущем списке, то перебираем список и добавляем ей признак избранной
@@ -51,7 +51,7 @@ export const stationSlice = createSlice({
             let all_st = state.all_radioStation.length === radioStation.length
             // console.log(all_st)
             if(all_st) {
-                // Если у нас открыт список всех станций, то просто убираем у станциив этом списке признак избранной
+                // Если у нас открыт список всех станций, то просто убираем у станции в этом списке признак избранной
                 state.all_radioStation = state.all_radioStation.map(e => {
                     if (e.name === state.user_selected_station.name) {
                         e.favorites = true
@@ -59,13 +59,14 @@ export const stationSlice = createSlice({
                     return e
                 })
             } else {
+                // Если у нас открыт список избранных станций, то вычисляем индекс текуцей станции и....
                 let i;
                 (state.all_radioStation).forEach((el,ind) => {
                     if(el.name === state.user_selected_station.name) {
                          i = ind
                     }
                 })
-                // console.log(i)
+                //...и убираем её из списка избранных станций.
                 state.all_radioStation = state.all_radioStation.filter((el, ind) => ind !== i)
             }
         }
