@@ -67,14 +67,14 @@ export const Player = () => {
                         }
                         onCanPlay={
                             () => {
-                                console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
+                                // console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
                                 setBuffer('играет')
                                 audio.current.play()
                             }
                         }
                         //----------------------------------------------
-                        onProgress={() => console.log('onProgress')}
-                        onSuspend={() => console.log('onSuspend')}
+                        // onProgress={() => console.log('onProgress')}
+                        // onSuspend={() => console.log('onSuspend')}
                         //-----------------------------------------------
                         onStalled={
                             () => {
