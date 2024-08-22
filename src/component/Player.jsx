@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import localDataWork from '../utils/localStor'
 import { addFavoritStation, removeFavoritStation } from '../features/station/stationSlice'
+import Audio from './Audio'
 
 const title = document.querySelector('title')
 
@@ -9,7 +10,6 @@ export const Player = () => {
 
     let selectedStation = useSelector((state) => state.radio_station.user_selected_station)
     const dispatch = useDispatch()
-    // let favoriteArr = localDataWork.getFavoriteArr()
 
     let audio = useRef()
     let [buffer, setBuffer] = useState('загружается')
@@ -81,6 +81,8 @@ export const Player = () => {
                             }
                         }
                     ></audio>
+                    
+                    
                     <button className='playStop_btn'
 
                         onClick={() => playStop()}
@@ -90,11 +92,11 @@ export const Player = () => {
                                 ? './img/player/pause_btn.svg'
                                 : './img/player/play_btn.svg'
                         }
-                            width={30}
+                        width={30}
                             height={30}
                             alt={
                                 buffer === 'играет'
-                                    ? 'pause'
+                                ? 'pause'
                                     : 'play'
                             }
                         />
@@ -113,6 +115,7 @@ export const Player = () => {
                 </div>
                 :
                 <div>Радиостанция не выбрана</div>
-        }
+            }
+            <Audio/>
     </div>
 }

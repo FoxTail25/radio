@@ -17,7 +17,6 @@ export const stationSlice = createSlice({
     reducers: {
         userSelected: (state, action) => { state.user_selected_station = action.payload },
 
-
         favoriteFilter: (state, action) => {
             state.all_radioStation = state.all_radioStation.filter(e =>
                 (action.payload).includes(e.name)
@@ -26,12 +25,10 @@ export const stationSlice = createSlice({
         resetFilter: (state) => { state.all_radioStation = radioStation },
 
         addFavoritStation: (state) => {
-
             state.user_selected_station.favorites = true; //Добавляем текущей станции признак избранной
             let all_st = state.all_radioStation.length === radioStation.length
             // let all_st = state.all_radioStation.some(e => e.name === state.user_selected_station.name); // проверяем есть ли в текущем списке станций добавляемая станция (если текущей нет, то это полный список.)
-
-            if(all_st) {
+            if (all_st) {
                 //Если станция есть в текущем списке, то перебираем список и добавляем ей признак избранной
                 state.all_radioStation = state.all_radioStation.map(e => {
                     if (e.name === state.user_selected_station.name) {
@@ -43,14 +40,13 @@ export const stationSlice = createSlice({
                 //Если станции нет в текущем списке, то добавляем её.
                 state.all_radioStation.push(state.user_selected_station)
             }
-
         },
         removeFavoritStation: (state) => {
             state.user_selected_station.favorites = false; //Удаляем у текущей станции признак избранной
 
             let all_st = state.all_radioStation.length === radioStation.length
             // console.log(all_st)
-            if(all_st) {
+            if (all_st) {
                 // Если у нас открыт список всех станций, то просто убираем у станции в этом списке признак избранной
                 state.all_radioStation = state.all_radioStation.map(e => {
                     if (e.name === state.user_selected_station.name) {
@@ -61,9 +57,9 @@ export const stationSlice = createSlice({
             } else {
                 // Если у нас открыт список избранных станций, то вычисляем индекс текуцей станции и....
                 let i;
-                (state.all_radioStation).forEach((el,ind) => {
-                    if(el.name === state.user_selected_station.name) {
-                         i = ind
+                (state.all_radioStation).forEach((el, ind) => {
+                    if (el.name === state.user_selected_station.name) {
+                        i = ind
                     }
                 })
                 //...и убираем её из списка избранных станций.
