@@ -2,9 +2,10 @@ import { useSelector } from "react-redux"
 
 export default function Audio() {
 
-    const play_state = useSelector((state)=> state.play.play_pause_state)
+    const play_state = useSelector((state)=> state.play)
 
-    console.log(play_state)
+    console.log('play_state', play_state.play_pause_state)
+    console.log('href', play_state.href_state)
 
     return <audio
     // ref={audio}

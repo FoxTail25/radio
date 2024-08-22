@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import localDataWork from '../utils/localStor'
 import { addFavoritStation, removeFavoritStation } from '../features/station/stationSlice'
 import Audio from './Audio'
+import { setHref } from '../features/player/playerSlice'
 
 const title = document.querySelector('title')
 
@@ -13,6 +14,11 @@ export const Player = () => {
 
     let audio = useRef()
     let [buffer, setBuffer] = useState('загружается')
+
+    if(selectedStation) {
+        // console.log(selectedStation.radioDot.dot_1)
+        // dispatch(setHref(selectedStation.radioDot.dot_1))
+    }
 
     useEffect(() => {
         if (audio.current) {
