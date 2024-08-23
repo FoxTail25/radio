@@ -1,6 +1,6 @@
 {
-  "name": "Free listening to internet radio",
   "short_name": "RadioApp",
+  "name": "Free listening to internet radio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,6 +21,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#19C9BF",
-  "prefer_related_applications": false
+  "background_color": "#19C9BF"
 }
