@@ -1,36 +1,44 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import localDataWork from '../utils/localStor'
 import { addFavoritStation, removeFavoritStation } from '../features/station/stationSlice'
 import Audio from './Audio'
-import { setHref } from '../features/player/playerSlice'
+import { stop, play, setHref } from '../features/player/playerSlice'
+import radioStation from '../data/station'
 
 const title = document.querySelector('title')
 
 export const Player = () => {
 
-    let selectedStation = useSelector((state) => state.radio_station.user_selected_station)
+    const selectedStation = useSelector((state) => state.radio_station.user_selected_station)
+    const play_state = useSelector((state) => state.play.play_pause_state)
     const dispatch = useDispatch()
+    
+    
 
-    let audio = useRef()
-    let [buffer, setBuffer] = useState('загружается')
-
-    if(selectedStation) {
-        // console.log(selectedStation.radioDot.dot_1)
-        // dispatch(setHref(selectedStation.radioDot.dot_1))
+    let href;
+    if (selectedStation) {
+        href = selectedStation?.radioDot.dot_1.href
     }
 
-    useEffect(() => {
-        if (audio.current) {
-            title.innerText = `радио ${selectedStation.name}`
-        }
-    }, [selectedStation])
+useEffect(()=>{
+    dispatch(setHref(href))
+    
+},[selectedStation])
+
+    // let audio = useRef()
+    let [buffer, setBuffer] = useState('загружается')
+
+
 
     function playStop() {
-        if (buffer === "играет") {
-            audio.current.pause()
+        if (play_state !== "play") {
+            // audio.current.pause()
+            console.log(play_state)
+            dispatch(play())
         } else {
-            audio.current.play()
+            dispatch(stop())
+            // audio.current.play()
         }
     }
     function favorit(e) {
@@ -51,58 +59,24 @@ export const Player = () => {
                 ?
                 <div>
                     <div>
-                        {buffer} радио {selectedStation.name}
+                        {/* {buffer}  */}
+                        радио {selectedStation.name}
                     </div>
-                    <audio
-                        ref={audio}
-                        src={selectedStation.radioDot.dot_1.href}
-                        preload='auto'
-                        onPause={
-                            () => setBuffer('выбрано')
-                        }
-                        onPlay={
-                            () => setBuffer('играет')
-                        }
-                        onCanPlay={
-                            () => {
-                                // console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
-                                setBuffer('играет')
-                                audio.current.play()
-                            }
-                        }
-                        //----------------------------------------------
-                        // onProgress={() => console.log('onProgress')}
-                        // onSuspend={() => console.log('onSuspend')}
-                        //-----------------------------------------------
-                        onStalled={
-                            () => {
-                                // console.log('onStalled'); 
-                                // reset()
-                            }
-                        }
-                        onWaiting={
-                            () => {
-                                // console.log('onWaiting');
-                                // reset() 
-                            }
-                        }
-                    ></audio>
-                    
-                    
-                    <button className='playStop_btn'
 
+
+                    <button className='playStop_btn'
                         onClick={() => playStop()}
                     >
                         <img src={
-                            buffer === 'играет'
+                            play_state !== 'stop'
                                 ? './img/player/pause_btn.svg'
                                 : './img/player/play_btn.svg'
                         }
-                        width={30}
+                            width={30}
                             height={30}
                             alt={
                                 buffer === 'играет'
-                                ? 'pause'
+                                    ? 'pause'
                                     : 'play'
                             }
                         />
@@ -121,7 +95,10 @@ export const Player = () => {
                 </div>
                 :
                 <div>Радиостанция не выбрана</div>
-            }
-            <Audio/>
+        }
+        {
+         selectedStation && <Audio />
+        }
+     
     </div>
 }

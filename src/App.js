@@ -4,7 +4,6 @@ import { SettingBtn } from './component/SettingBtn.jsx';
 
 function App() {
 
-
   return (
     <div className="App">
       <main>
