@@ -1,6 +1,6 @@
 {
+  "short_name": "Internet radio App",
   "name": "Free listening to internet radio",
-  "short_name": "RadioApp",
   "icons": [
     {
       "src": "favicon.ico",
@@ -15,8 +15,7 @@
     {
       "src": "favicon512.jpg",
       "type": "image/jpg",
-      "sizes": "512x512",
-	  "purpose": "maskable"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
