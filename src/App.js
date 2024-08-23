@@ -1,6 +1,6 @@
 import { Player } from './component/Player';
 import SelectStation from './component/SelectStation.jsx';
-import { SettingBtn } from './component/SettingBtn.jsx';
+// import { SettingBtn } from './component/SettingBtn.jsx';
 
 function App() {
 
