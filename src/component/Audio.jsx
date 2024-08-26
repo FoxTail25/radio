@@ -1,15 +1,29 @@
-import { useSelector } from "react-redux"
+import { useRef } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { play } from "../features/player/playerSlice"
 
 export default function Audio() {
 
     const play_state = useSelector((state)=> state.play)
+    const dispatch = useDispatch()
+
+    const audio = useRef()
 
     console.log('play_state', play_state.play_pause_state)
-    console.log('href', play_state.href_state)
+    // console.log('href', play_state.href_state)
+
+    if(play_state.play_pause_state === 'play') {
+        audio.current.play()
+    }
+
+    if(audio.current && play_state.play_pause_state === 'stop') {
+        audio.current.pause()
+        // console.log('stop', audio.current)
+    }
 
     return <audio
-    // ref={audio}
-    // src={selectedStation.radioDot.dot_1.href}
+    ref={audio}
+    src={play_state.href_state}
     // preload='auto'
     // onPause={
     //     () => setBuffer('выбрано')
@@ -17,13 +31,14 @@ export default function Audio() {
     // onPlay={
     //     () => setBuffer('играет')
     // }
-    // onCanPlay={
-    //     () => {
-    //         // console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
+    onCanPlay={
+        () => {
+            console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
     //         setBuffer('играет')
     //         audio.current.play()
-    //     }
-    // }
+            dispatch(play())
+        }
+    }
     // //----------------------------------------------
     // // onProgress={() => console.log('onProgress')}
     // // onSuspend={() => console.log('onSuspend')}

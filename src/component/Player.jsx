@@ -1,33 +1,50 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import localDataWork from '../utils/localStor'
 import { addFavoritStation, removeFavoritStation } from '../features/station/stationSlice'
-// import Audio from './Audio'
+import Audio from './Audio'
+import { play, setHref, stop } from '../features/player/playerSlice'
 
 const title = document.querySelector('title')
 
 export const Player = () => {
 
     let selectedStation = useSelector((state) => state.radio_station.user_selected_station)
+    let playPause_state = useSelector((state) => state.play.play_pause_state)
     const dispatch = useDispatch()
 
-    let audio = useRef()
-    let [buffer, setBuffer] = useState('загружается')
+
+    // let audio = useRef()
+    // let [buffer, setBuffer] = useState('загружается')
 
     console.log("произошла загрузка компоненте плеер")
 
-    useEffect(() => {
-        if (audio.current) {
-            title.innerText = `радио ${selectedStation.name}`
+    useEffect(()=> {
+        if(selectedStation) {
+            // console.log(selectedStation.radioDot.dot_1.href)
+            dispatch(setHref(selectedStation.radioDot.dot_1.href))
         }
-        setBuffer('загружается')
-    }, [selectedStation])
+        console.log(playPause_state)
+    })
+
+    // useEffect(() => {
+    //     if (audio.current) {
+    //         title.innerText = `радио ${selectedStation.name}`
+    //     }
+    //     setBuffer('загружается')
+    // }, [selectedStation])
 
     function playStop() {
-        if (buffer === "играет") {
-            audio.current.pause()
+    //     if (buffer === "играет") {
+    //         audio.current.pause()
+    //     } else {
+    //         audio.current.play()
+    //     }
+    if(playPause_state === 'stop') {
+            dispatch(play())
         } else {
-            audio.current.play()
+            dispatch(stop())
+
         }
     }
     function favorit(e) {
@@ -48,9 +65,10 @@ export const Player = () => {
                 ?
                 <div>
                     <div>
-                        {buffer} радио {selectedStation.name}
+                        {/* {buffer}  */}
+                        радио {selectedStation.name}
                     </div>
-                    <audio
+                    {/* <audio
                         ref={audio}
                         src={selectedStation.radioDot.dot_1.href}
                         preload='auto'
@@ -82,7 +100,8 @@ export const Player = () => {
                                 // reset() 
                             }
                         }
-                    ></audio>
+                    ></audio> */}
+                    <Audio/>
                     
                     
                     <button className='playStop_btn'
@@ -90,16 +109,16 @@ export const Player = () => {
                         onClick={() => playStop()}
                     >
                         <img src={
-                            buffer === 'играет'
+                            playPause_state !== 'stop'
                                 ? './img/player/pause_btn.svg'
                                 : './img/player/play_btn.svg'
                         }
                         width={30}
                             height={30}
                             alt={
-                                buffer === 'играет'
+                                playPause_state !== 'play'
                                 ? 'pause'
-                                    : 'play'
+                                : 'play'
                             }
                         />
                     </button>

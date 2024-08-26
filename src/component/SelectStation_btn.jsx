@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { userSelected } from '../features/station/stationSlice'
+import { stop } from '../features/player/playerSlice'
 
 
 
@@ -11,6 +12,7 @@ export default function SelectStationBtn({name, img}) {
 
 	function filteredRadioStation(name) {
 		let userSelectedStation = [...radioStation].filter(e => e.name === name)[0]
+		dispatch(stop())
 		dispatch(userSelected(userSelectedStation))
 	}
 

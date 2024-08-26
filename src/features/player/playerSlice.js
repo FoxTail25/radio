@@ -14,5 +14,5 @@ export const playerSlice = createSlice({
     },
 })
 
-export const { play, pause, setHref, resetHref } = playerSlice.actions
+export const { play, stop, setHref, resetHref } = playerSlice.actions
 export default playerSlice.reducer
