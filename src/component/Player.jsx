@@ -14,6 +14,7 @@ export const Player = () => {
     let audio = useRef()
     let [buffer, setBuffer] = useState('загружается')
 
+    console.log("произошла загрузка компоненте плеер")
 
     useEffect(() => {
         if (audio.current) {
@@ -54,15 +55,19 @@ export const Player = () => {
                         src={selectedStation.radioDot.dot_1.href}
                         preload='auto'
                         onPause={
-                            () => setBuffer('выбрано')
+                            () => {
+                                // setBuffer('выбрано')
+                            }
                         }
                         onPlay={
-                            () => setBuffer('играет')
+                            () => {
+                                // setBuffer('играет')
+                            }
                         }
                         onCanPlay={
                             () => {
-                                setBuffer('играет')
-                                audio.current.play()
+                                // setBuffer('играет')
+                                // audio.current.play()
                             }
                         }
                         onStalled={
