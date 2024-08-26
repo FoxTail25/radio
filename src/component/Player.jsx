@@ -99,7 +99,12 @@ export const Player = () => {
                     </button>
                     <div className='favorite'>
                         <button
-                            className='favorite__btn favorite__btn_addDel'
+                            // className='favorite__btn favorite__btn_addDel'
+                            className={
+                                selectedStation.favorites
+                                    ? 'favorite__btn favorite__btn_del favorite__btn_addDel'
+                                    : 'favorite__btn favorite__btn_add favorite__btn_addDel'
+                            }
                             onClick={(e) => favorit(e)}>
                             {
                                 selectedStation.favorites
