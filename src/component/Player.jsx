@@ -19,6 +19,7 @@ export const Player = () => {
         if (audio.current) {
             title.innerText = `радио ${selectedStation.name}`
         }
+        setBuffer('загружается')
     }, [selectedStation])
 
     function playStop() {

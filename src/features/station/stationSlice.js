@@ -30,7 +30,7 @@ export const stationSlice = createSlice({
                 }
                 return { ...e, favorites: false} 
             })
-            console.log('final', temp)
+            // console.log('final', temp)
             state.all_radioStation = [...temp];
         },
 
