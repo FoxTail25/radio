@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import radioStation from '../../data/station.js';
 import localDataWork from "../../utils/localStor.js";
 
+let favorit = localDataWork.getFavoriteArr()
 radioStation.forEach(e => {
-    let favorit = localDataWork.getFavoriteArr()
     if (favorit.includes(e.name))
         e.favorites = true
 })
@@ -22,7 +22,17 @@ export const stationSlice = createSlice({
                 (action.payload).includes(e.name)
             )
         },
-        resetFilter: (state) => { state.all_radioStation = radioStation },
+        resetFilter: (state) => { 
+            let favorit = localDataWork.getFavoriteArr()
+            let temp = [...radioStation].map(e => {
+                if(favorit.includes(e.name)) {    
+                    return { ...e, favorites: true} 
+                }
+                return { ...e, favorites: false} 
+            })
+            console.log('final', temp)
+            state.all_radioStation = [...temp];
+        },
 
         addFavoritStation: (state) => {
             state.user_selected_station.favorites = true; //Добавляем текущей станции признак избранной
