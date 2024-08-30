@@ -3,6 +3,7 @@ import SelectStationBtn from './SelectStation_btn'
 import { useDispatch, useSelector } from 'react-redux';
 import localDataWork from '../utils/localStor';
 import { favoriteFilter, resetFilter } from '../features/station/stationSlice';
+import Triger from './Triger';
 
 
 export default function SelectStation() {
@@ -21,12 +22,13 @@ export default function SelectStation() {
             <h2>
                 Интернет радиостанции
             </h2>
-            <div>
+            <div className='select_btn_container'>
                 <button
                     className='favorite__btn'
                     onClick={() => dispatch(resetFilter())}>
                     все
                 </button>
+                <Triger/>
                 <button
                     className='favorite__btn'
                     onClick={() => dispatch(favoriteFilter(favoriteArr))}>
