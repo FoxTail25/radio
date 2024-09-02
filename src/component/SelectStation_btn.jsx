@@ -4,7 +4,7 @@ import { stop } from '../features/player/playerSlice'
 
 
 
-export default function SelectStationBtn({name, img}) {
+export default function SelectStationBtn({ name, img, favorites }) {
 
 	const radioStation = useSelector((state) => state.radio_station.all_radioStation)
 
@@ -16,13 +16,19 @@ export default function SelectStationBtn({name, img}) {
 		dispatch(userSelected(userSelectedStation))
 	}
 
-	return <div>
+	console.log(favorites)
+	return <div className='radiostation_btn'>
 		<button
 			onClick={
 				() => filteredRadioStation(name)
 			}
 		>
-			<img src={img} alt='station_logo' />
+			<img src={img} alt='station_logo'  className='radiostation_logo'/>
+			{
+				favorites
+					? <img src='img/player/favorite.svg' alt='station_logo' className='favorite_icon' />
+					: ''
+			}
 		</button>
 		<div>
 			{name}

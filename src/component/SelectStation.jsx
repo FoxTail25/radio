@@ -9,7 +9,7 @@ import Triger from './Triger';
 export default function SelectStation() {
 
     let radioStation = useSelector((state) => state.radio_station.all_radioStation)
-    let allName = radioStation.map(e => { return { name: e.name, img: e.img } })
+    let allName = radioStation.map(e => { return { name: e.name, img: e.img, favorites: e.favorites } })
     const dispatch = useDispatch()
 
     // console.log("радио станции", radioStation)
