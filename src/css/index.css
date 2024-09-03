@@ -116,4 +116,18 @@ main {
   text-align: center;
   border: none;
   margin: 10px 0;
+}
+
+.radiostation_btn {
+  position: relative;
+}
+.radiostation_btn button {
+  position: inherit;
+}
+.radiostation_btn button img.favorite_icon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  height: 15%;
+  width: 15%;
 }/*# sourceMappingURL=index.css.map */
