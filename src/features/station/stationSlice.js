@@ -60,7 +60,7 @@ export const stationSlice = createSlice({
                 // Если у нас открыт список всех станций, то просто убираем у станции в этом списке признак избранной
                 state.all_radioStation = state.all_radioStation.map(e => {
                     if (e.name === state.user_selected_station.name) {
-                        e.favorites = true
+                        e.favorites = false
                     }
                     return e
                 })
