@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { play } from "../features/player/playerSlice"
+import { play, stop } from "../features/player/playerSlice"
 
 export default function Audio() {
 
@@ -25,12 +25,12 @@ export default function Audio() {
     ref={audio}
     src={play_state.href_state}
     // preload='auto'
-    // onPause={
-    //     () => setBuffer('выбрано')
-    // }
-    // onPlay={
-    //     () => setBuffer('играет')
-    // }
+    onPause={
+        () => dispatch(stop())
+    }
+    onPlay={
+        () => dispatch(play())
+    }
     onCanPlay={
         () => {
             console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
