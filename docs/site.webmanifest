@@ -18,7 +18,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "https://foxtail25.github.io/radio/",
+    "start_url": "index.html",
     "display": "standalone",
     "theme_color": "#19c9bf",
     "background_color": "#19c9bf"
