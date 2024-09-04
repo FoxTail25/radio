@@ -36,7 +36,7 @@ export default function Audio() {
             console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
     //         setBuffer('играет')
     //         audio.current.play()
-            // dispatch(play())
+            dispatch(play())
         }
     }
     // //----------------------------------------------
