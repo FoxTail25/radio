@@ -1,11 +1,11 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import localDataWork from '../utils/localStor'
 import { addFavoritStation, removeFavoritStation } from '../features/station/stationSlice'
 import Audio from './Audio'
 import { play, setHref, stop } from '../features/player/playerSlice'
 
-const title = document.querySelector('title')
+// const title = document.querySelector('title')
 
 export const Player = () => {
 
@@ -18,6 +18,7 @@ export const Player = () => {
     // let [buffer, setBuffer] = useState('загружается')
 
     console.log("произошла загрузка компоненте плеер")
+    console.log("selectedStation", selectedStation)
 
     useEffect(()=> {
         if(selectedStation) {
@@ -68,40 +69,11 @@ export const Player = () => {
                         {/* {buffer}  */}
                         радио {selectedStation.name}
                     </div>
-                    {/* <audio
-                        ref={audio}
-                        src={selectedStation.radioDot.dot_1.href}
-                        preload='auto'
-                        onPause={
-                            () => {
-                                // setBuffer('выбрано')
-                            }
-                        }
-                        onPlay={
-                            () => {
-                                // setBuffer('играет')
-                            }
-                        }
-                        onCanPlay={
-                            () => {
-                                // setBuffer('играет')
-                                // audio.current.play()
-                            }
-                        }
-                        onStalled={
-                            () => {
-                                // console.log('onStalled'); 
-                                // reset()
-                            }
-                        }
-                        onWaiting={
-                            () => {
-                                // console.log('onWaiting');
-                                // reset() 
-                            }
-                        }
-                    ></audio> */}
-                    <Audio/>
+                    {
+                        selectedStation 
+                        ? <Audio/>
+                        : ''
+                    }
                     
                     
                     <button className='playStop_btn'

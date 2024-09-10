@@ -28,7 +28,7 @@ export default function SelectStation() {
                     onClick={() => dispatch(resetFilter())}>
                     все
                 </button>
-                <Triger/>
+                {/* <Triger/> */}
                 <button
                     className='favorite__btn'
                     onClick={() => dispatch(favoriteFilter(favoriteArr))}>

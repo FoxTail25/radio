@@ -1,13 +1,17 @@
 import { useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { play, stop } from "../features/player/playerSlice"
+import { userSelected } from "../features/station/stationSlice"
 
 export default function Audio() {
 
+    const selectedStation = useSelector((state) => state.radio_station.user_selected_station)
     const play_state = useSelector((state)=> state.play)
     const dispatch = useDispatch()
 
+
     const audio = useRef()
+
 
     console.log('play_state', play_state.play_pause_state)
     // console.log('href', play_state.href_state)
@@ -39,16 +43,25 @@ export default function Audio() {
             dispatch(play())
         }
     }
+    onError={
+        ()=> console.log('ERROR')
+    }
+    onErrorCapture={
+        () => console.log('ErrCapture')
+    }
     // //----------------------------------------------
-    // // onProgress={() => console.log('onProgress')}
-    // // onSuspend={() => console.log('onSuspend')}
+    // onProgress={() => console.log('onProgress')}
+    onSuspend={() => console.log('onSuspend')}
     // //-----------------------------------------------
-    // onStalled={
-    //     () => {
-    //         // console.log('onStalled'); 
-    //         // reset()
-    //     }
-    // }
+    onStalled={
+        () => {
+            console.log('onStalled'); 
+            // reset()
+            dispatch(stop())
+            dispatch(userSelected(''));
+            setTimeout(() => {dispatch(userSelected(selectedStation))}, 1000)
+        }
+    }
     // onWaiting={
     //     () => {
     //         // console.log('onWaiting');
