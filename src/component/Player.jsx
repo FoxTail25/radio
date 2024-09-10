@@ -5,7 +5,6 @@ import { addFavoritStation, removeFavoritStation } from '../features/station/sta
 import Audio from './Audio'
 import { play, setHref, stop } from '../features/player/playerSlice'
 
-// const title = document.querySelector('title')
 
 export const Player = () => {
 
@@ -13,34 +12,18 @@ export const Player = () => {
     let playPause_state = useSelector((state) => state.play.play_pause_state)
     const dispatch = useDispatch()
 
-
-    // let audio = useRef()
-    // let [buffer, setBuffer] = useState('загружается')
-
-    console.log("произошла загрузка компоненте плеер")
-    console.log("selectedStation", selectedStation)
+    // console.log("произошла загрузка компоненте плеер")
+    // console.log("selectedStation", selectedStation)
 
     useEffect(()=> {
         if(selectedStation) {
-            // console.log(selectedStation.radioDot.dot_1.href)
             dispatch(setHref(selectedStation.radioDot.dot_1.href))
         }
-        console.log(playPause_state)
+        // console.log(playPause_state)
     })
 
-    // useEffect(() => {
-    //     if (audio.current) {
-    //         title.innerText = `радио ${selectedStation.name}`
-    //     }
-    //     setBuffer('загружается')
-    // }, [selectedStation])
 
     function playStop() {
-    //     if (buffer === "играет") {
-    //         audio.current.pause()
-    //     } else {
-    //         audio.current.play()
-    //     }
     if(playPause_state === 'stop') {
             dispatch(play())
         } else {
@@ -66,7 +49,6 @@ export const Player = () => {
                 ?
                 <div>
                     <div>
-                        {/* {buffer}  */}
                         радио {selectedStation.name}
                     </div>
                     {
@@ -96,7 +78,6 @@ export const Player = () => {
                     </button>
                     <div className='favorite'>
                         <button
-                            // className='favorite__btn favorite__btn_addDel'
                             className={
                                 selectedStation.favorites
                                     ? 'favorite__btn favorite__btn_del favorite__btn_addDel'
@@ -114,6 +95,5 @@ export const Player = () => {
                 :
                 <div>Радиостанция не выбрана</div>
             }
-            {/* <Audio/> */}
     </div>
 }

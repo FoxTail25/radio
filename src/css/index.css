@@ -53,6 +53,7 @@ main {
   padding-bottom: 5px;
   border-bottom: 1px solid #19C9BF;
   border-radius: 7px;
+  z-index: 2;
 }
 .ss_container .station_sort .select_btn_container {
   display: flex;

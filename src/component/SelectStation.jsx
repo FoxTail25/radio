@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SelectStationBtn from './SelectStation_btn'
 import { useDispatch, useSelector } from 'react-redux';
 import localDataWork from '../utils/localStor';
-import { favoriteFilter, resetFilter } from '../features/station/stationSlice';
-import Triger from './Triger';
+import { favoriteFilter, findFilter, resetFilter } from '../features/station/stationSlice';
 
 
 export default function SelectStation() {
@@ -12,9 +11,18 @@ export default function SelectStation() {
     let allName = radioStation.map(e => { return { name: e.name, img: e.img, favorites: e.favorites } })
     const dispatch = useDispatch()
 
-    // console.log("радио станции", radioStation)
+    let [find, setFind] = useState('')
+
 
     let favoriteArr = localDataWork.getFavoriteArr()
+
+    function findStation(e) {
+        setFind(e.target.value)
+    }
+    
+    useEffect(() => {
+        dispatch(findFilter(find))
+    },[find])
 
 
     return <div className='ss_container'>
@@ -28,14 +36,13 @@ export default function SelectStation() {
                     onClick={() => dispatch(resetFilter())}>
                     все
                 </button>
-                {/* <Triger/> */}
                 <button
                     className='favorite__btn'
                     onClick={() => dispatch(favoriteFilter(favoriteArr))}>
                     избранные
                 </button>
-                {/* <button>жанры</button> */}
             </div>
+            <input className='finder' type='search' value={find} onChange={(e)=> findStation(e)}/>
         </div>
         <div className='radioStation_btn_container'>
             {

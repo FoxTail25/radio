@@ -13,8 +13,6 @@ export default function Audio() {
     const audio = useRef()
 
 
-    console.log('play_state', play_state.play_pause_state)
-    // console.log('href', play_state.href_state)
 
     if(play_state.play_pause_state === 'play') {
         audio.current.play()
@@ -22,13 +20,11 @@ export default function Audio() {
 
     if(audio.current && play_state.play_pause_state === 'stop') {
         audio.current.pause()
-        // console.log('stop', audio.current)
     }
 
     return <audio
     ref={audio}
     src={play_state.href_state}
-    // preload='auto'
     onPause={
         () => dispatch(stop())
     }
@@ -37,36 +33,34 @@ export default function Audio() {
     }
     onCanPlay={
         () => {
-            console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
-    //         setBuffer('играет')
-    //         audio.current.play()
+            // console.log('onCanPlay то что нужно!!! сигнализирует о возможности играть трек');
             dispatch(play())
         }
     }
     onError={
-        ()=> console.log('ERROR')
+        ()=> {
+            // console.log('ERROR')
+        }
     }
     onErrorCapture={
-        () => console.log('ErrCapture')
+        () => 
+            {
+                // console.log('ErrCapture')
+            }
     }
-    // //----------------------------------------------
-    // onProgress={() => console.log('onProgress')}
-    onSuspend={() => console.log('onSuspend')}
-    // //-----------------------------------------------
+    onSuspend={() =>
+        {
+        //  console.log('onSuspend')
+        }
+    }
     onStalled={
         () => {
-            console.log('onStalled'); 
+            // console.log('onStalled'); 
             // reset()
             dispatch(stop())
             dispatch(userSelected(''));
             setTimeout(() => {dispatch(userSelected(selectedStation))}, 1000)
         }
     }
-    // onWaiting={
-    //     () => {
-    //         // console.log('onWaiting');
-    //         // reset() 
-    //     }
-    // }
 ></audio>
 }

@@ -7,7 +7,6 @@ import { stop } from '../features/player/playerSlice'
 export default function SelectStationBtn({ name, img, favorites }) {
 
 	const radioStation = useSelector((state) => state.radio_station.all_radioStation)
-	// console.log(radioStation)
 
 	const dispatch = useDispatch()
 
@@ -15,10 +14,9 @@ export default function SelectStationBtn({ name, img, favorites }) {
 		let userSelectedStation = [...radioStation].filter(e => e.name === name)[0]
 		dispatch(stop())
 		dispatch(userSelected(userSelectedStation))
-		console.log('fav', userSelectedStation.favorites)
+		// console.log('fav', userSelectedStation.favorites)
 	}
 
-	// console.log(favorites)
 	return <div className='radiostation_btn'>
 		<button
 			onClick={

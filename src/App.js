@@ -12,11 +12,11 @@ function App() {
 
   window.ononline = (event) => {
 
-    console.log("ononline You are now connected to the network.");
+    // console.log("ononline You are now connected to the network.");
 
     let data = JSON.parse(localStorage.getItem('radio'))
     if(data) {
-      console.log(data[0])
+      // console.log(data[0])
       dispatch(userSelected(data[0]))
       // dispatch(play())
       localStorage.removeItem('radio')
@@ -25,7 +25,7 @@ function App() {
  
   window.onoffline = (event) => {
 
-    console.log("offonline The network connection has been lost.");
+    // console.log("offonline The network connection has been lost.");
 
     localStorage.setItem('radio', JSON.stringify([selectedStation, playPause_state]))
     dispatch(stop())

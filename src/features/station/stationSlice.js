@@ -22,6 +22,16 @@ export const stationSlice = createSlice({
                 (action.payload).includes(e.name)
             )
         },
+        findFilter: (state, action) => {
+            if(action.payload === '') {
+                // console.log('pusto')
+                state.all_radioStation = radioStation
+            } else {
+                let findedArr = [...radioStation].filter((e) => ({...e}.name).toLowerCase().includes((action.payload).toLowerCase()));
+                state.all_radioStation = findedArr;
+
+            }
+        },
         resetFilter: (state) => { 
             let favorit = localDataWork.getFavoriteArr()
             let temp = [...radioStation].map(e => {
@@ -79,5 +89,5 @@ export const stationSlice = createSlice({
     },
 })
 
-export const { userSelected, favoriteFilter, resetFilter, addFavoritStation, removeFavoritStation } = stationSlice.actions
+export const { userSelected, favoriteFilter, findFilter, resetFilter, addFavoritStation, removeFavoritStation } = stationSlice.actions
 export default stationSlice.reducer
