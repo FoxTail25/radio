@@ -27,7 +27,9 @@ export const stationSlice = createSlice({
                 // console.log('pusto')
                 state.all_radioStation = radioStation
             } else {
-                let findedArr = [...radioStation].filter((e) => ({...e}.name).toLowerCase().includes((action.payload).toLowerCase()));
+                // let findedArr = [...radioStation].filter((e) => ({...e}.name).toLowerCase().includes((action.payload).toLowerCase()));
+                // state.all_radioStation = findedArr;
+                let findedArr = [...state.all_radioStation].filter((e) => ({...e}.name).toLowerCase().includes((action.payload).toLowerCase()));
                 state.all_radioStation = findedArr;
 
             }

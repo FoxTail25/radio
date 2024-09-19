@@ -38,14 +38,14 @@ export default function Audio() {
         }
     }
     onError={
-        ()=> {
-            // console.log('ERROR')
+        (e)=> {
+            console.log('ERROR', e)
         }
     }
     onErrorCapture={
-        () => 
+        (e) => 
             {
-                // console.log('ErrCapture')
+                console.log('ErrCapture',e)
             }
     }
     onSuspend={() =>
@@ -55,11 +55,12 @@ export default function Audio() {
     }
     onStalled={
         () => {
-            // console.log('onStalled'); 
-            // reset()
-            dispatch(stop())
-            dispatch(userSelected(''));
-            setTimeout(() => {dispatch(userSelected(selectedStation))}, 1000)
+            // console.log('onStalled selectStation is:', selectedStation); 
+            
+            // // reset()
+            // dispatch(stop())
+            // dispatch(userSelected(''));
+            // setTimeout(() => {dispatch(userSelected(selectedStation))}, 1000)
         }
     }
 ></audio>
