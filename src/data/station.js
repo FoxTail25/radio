@@ -358,20 +358,22 @@ const radioStation = [
         }
 
     },
-    {
-        name: "Радио для двоих",
-        category: ["pop"],
-        favorites:false,
-        img: 'https://top-radio.ru/assets/image/radio/180/radio-dlya-dvoix.jpg',
-        radioDot: {
-            dot_1: {
-                href: "https://icecast-radiofortwo.cdnvideo.ru/radiofortwo",
-                format: '',
-                location:"",
-            },
-        }
+    // {
+    //     name: "Радио для двоих",
+    //     category: ["pop"],
+    //     favorites:false,
+    //     img: 'https://top-radio.ru/assets/image/radio/180/radio-dlya-dvoix.jpg',
+    //     radioDot: {
+    //         dot_1: {
+    //             // href: "https://icecast-radiofortwo.cdnvideo.ru/radiofortwo",
+    //             href: "https://russia.radiosolo.ru/radio_ru/fortwo/icecast.audio",
+    //             // href: "http://radio.chastnik-m.ru:8001/rdd",
+    //             format: '',
+    //             location:"",
+    //         },
+    //     }
 
-    },
+    // },
     {
         name: "Радио ЗВЕЗДА",
         category: ["pop"],

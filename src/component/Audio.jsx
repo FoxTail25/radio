@@ -25,6 +25,9 @@ export default function Audio() {
     return <audio
     ref={audio}
     src={play_state.href_state}
+    // crossOrigin='anonymous'
+    // preload='meta'
+    
     onPause={
         () => dispatch(stop())
     }
