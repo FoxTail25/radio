@@ -163,7 +163,7 @@ const radioStation = [
 
     },
     {
-        name: "Русское радио",
+        name: "Русское",
         category: ["pop"],
         favorites:false,
         img: 'https://top-radio.ru/assets/image/radio/180/rusradio.png',
@@ -177,7 +177,7 @@ const radioStation = [
 
     },
     {
-        name: "Дорожное радио",
+        name: "Дорожное",
         category: ["pop"],
         favorites:false,
         img: 'https://top-radio.ru/assets/image/radio/180/dorojnoe.png',
