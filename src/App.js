@@ -9,10 +9,11 @@ function App() {
   let selectedStation = useSelector((state) => state.radio_station.user_selected_station)
   let playPause_state = useSelector((state) => state.play.play_pause_state)
   const dispatch = useDispatch()
-
+  
   window.ononline = (event) => {
-
+    
     // console.log("ononline You are now connected to the network.");
+    console.log('online')
 
     let data = JSON.parse(localStorage.getItem('radio'))
     if(data) {
@@ -20,15 +21,15 @@ function App() {
       localStorage.removeItem('radio')
     }
   };
- 
+  
   window.onoffline = (event) => {
-
+    console.log('offline')
     localStorage.setItem('radio', JSON.stringify([selectedStation, playPause_state]))
     dispatch(stop())
     dispatch(userSelected(''))
   };
-
-
+  
+  
   return (
     <div className="App">
       <main>

@@ -148,6 +148,63 @@ const radioStation = [
         }
 
     },
+    {
+        name: "Маруся FM",
+        category: ["pop"],
+        favorites:false,
+        img: 'img/station_logo/marusyafm.png',
+        radioDot: {
+            dot_1: {
+                href: "https://radio-holding.ru:9433/marusya_default",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Русское радио",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/rusradio.png',
+        radioDot: {
+            dot_1: {
+                href: "https://rusradio.hostingradio.ru/rusradio96.aacp",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Дорожное радио",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/dorojnoe.png',
+        radioDot: {
+            dot_1: {
+                href: "https://dorognoe.hostingradio.ru/dorognoe",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Европа плюс",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/europa-plus.png',
+        radioDot: {
+            dot_1: {
+                href: "https://ep256.hostingradio.ru:8052/europaplus256.mp3",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    
 ]
 
 export default radioStation
