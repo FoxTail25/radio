@@ -13,6 +13,7 @@ export default function SelectStationBtn({ name, img, favorites }) {
 	function filteredRadioStation(name) {
 		let userSelectedStation = [...radioStation].filter(e => e.name === name)[0]
 		dispatch(stop())
+		dispatch(userSelected(""))
 		dispatch(userSelected(userSelectedStation))
 		// console.log('fav', userSelectedStation.favorites)
 	}
@@ -30,7 +31,7 @@ export default function SelectStationBtn({ name, img, favorites }) {
 					: ''
 			}
 		</button>
-		<div>
+		<div className='station_name'>
 			{name}
 		</div>
 	</div>
