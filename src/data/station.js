@@ -232,6 +232,160 @@ const radioStation = [
         }
 
     },
+    {
+        name: "Радио Рекорд",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/radiorecod.png',
+        radioDot: {
+            dot_1: {
+                href: "https://radiorecord.hostingradio.ru/rr_main96.aacp",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Радио ENERGY",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/energy.png',
+        radioDot: {
+            dot_1: {
+                href: "https://srv21.gpmradio.ru:8443/stream/air/aac/64/99",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Радио 7",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/radio7-na7holmah.png',
+        radioDot: {
+            dot_1: {
+                href: "https://radio7.hostingradio.ru:8040/radio7256.mp3",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "SOUNDPARK DEEP",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/spdeep.jpg',
+        radioDot: {
+            dot_1: {
+                href: "https://relay1.radiotoolkit.com/spdeep",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "НАШЕ Радио",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/nase-radio.png',
+        radioDot: {
+            dot_1: {
+                href: "https://nashe1.hostingradio.ru/nashe-256",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Юмор FM",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/humorfm.jpg',
+        radioDot: {
+            dot_1: {
+                href: "https://srv21.gpmradio.ru:8443/stream/air/aac/64/102",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Хит FM",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/hit-fm.png',
+        radioDot: {
+            dot_1: {
+                href: "https://hitfm.hostingradio.ru/hitfm96.aacp",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Радио Дача",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/radio-dacha.png',
+        radioDot: {
+            dot_1: {
+                href: "https://stream2.n340.com/12_dacha_64_reg_1093?type=aac&UID=8EBA0473F1C84552DDD158254380DB47",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Радио Romantika",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/romantika.png',
+        radioDot: {
+            dot_1: {
+                href: "https://srv21.gpmradio.ru:8443/stream/air/aac/64/101",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Радио для двоих",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/radio-dlya-dvoix.jpg',
+        radioDot: {
+            dot_1: {
+                href: "https://radiokrug.ru/radio/radiofortwo/icecast.audio",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Радио ЗВЕЗДА",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/zvezda-fm.jpg',
+        radioDot: {
+            dot_1: {
+                href: "https://zvezda-radio-rzv.mediacdn.ru/radio/zvezda/zvezda_128",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
     
 ]
 
