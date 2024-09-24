@@ -365,7 +365,7 @@ const radioStation = [
         img: 'https://top-radio.ru/assets/image/radio/180/radio-dlya-dvoix.jpg',
         radioDot: {
             dot_1: {
-                href: "https://radiokrug.ru/radio/radiofortwo/icecast.audio",
+                href: "https://icecast-radiofortwo.cdnvideo.ru/radiofortwo",
                 format: '',
                 location:"",
             },
