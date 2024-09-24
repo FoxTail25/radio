@@ -204,6 +204,34 @@ const radioStation = [
         }
 
     },
+    {
+        name: "Вести ФМ",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/vestifm.png',
+        radioDot: {
+            dot_1: {
+                href: "https://icecast-vgtrk.cdnvideo.ru/vestifm_mp3_192kbps",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
+    {
+        name: "Ретро FM",
+        category: ["pop"],
+        favorites:false,
+        img: 'https://top-radio.ru/assets/image/radio/180/retro_fm.png',
+        radioDot: {
+            dot_1: {
+                href: "https://retro.hostingradio.ru:8043/retro256.mp3",
+                format: '',
+                location:"",
+            },
+        }
+
+    },
     
 ]
 
