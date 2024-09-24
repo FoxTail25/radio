@@ -12,9 +12,7 @@ function App() {
   
   window.ononline = (event) => {
     
-    // console.log("ononline You are now connected to the network.");
-    console.log('online')
-
+    console.log("ononline You are now connected to the network.");
     let data = JSON.parse(localStorage.getItem('radio'))
     if(data) {
       dispatch(userSelected(data[0]))

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { userSelected } from '../features/station/stationSlice'
-import { stop } from '../features/player/playerSlice'
+import { play, stop } from '../features/player/playerSlice'
 
 
 
@@ -8,14 +8,22 @@ export default function SelectStationBtn({ name, img, favorites }) {
 
 	const radioStation = useSelector((state) => state.radio_station.all_radioStation)
 
+	const selected_station = useSelector((state) => state.radio_station.user_selected_station)
+
 	const dispatch = useDispatch()
 
 	function filteredRadioStation(name) {
+
+		// if (selected_station.name !== name) {
 		let userSelectedStation = [...radioStation].filter(e => e.name === name)[0]
 		dispatch(stop())
 		dispatch(userSelected(""))
+
+
 		dispatch(userSelected(userSelectedStation))
-		// console.log('fav', userSelectedStation.favorites)
+
+		setTimeout(() => dispatch(play()), 1)
+		// }
 	}
 
 	return <div className='radiostation_btn'>
@@ -24,7 +32,7 @@ export default function SelectStationBtn({ name, img, favorites }) {
 				() => filteredRadioStation(name)
 			}
 		>
-			<img src={img} alt='station_logo'  className='radiostation_logo'/>
+			<img src={img} alt='station_logo' className='radiostation_logo' />
 			{
 				favorites
 					? <img src='img/player/favorite.svg' alt='station_logo' className='favorite_icon' />

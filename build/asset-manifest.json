@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/radio/static/css/main.479721a1.css",
-    "main.js": "/radio/static/js/main.fb7f8a41.js",
+    "main.js": "/radio/static/js/main.c544055f.js",
     "index.html": "/radio/index.html",
     "main.479721a1.css.map": "/radio/static/css/main.479721a1.css.map",
-    "main.fb7f8a41.js.map": "/radio/static/js/main.fb7f8a41.js.map"
+    "main.c544055f.js.map": "/radio/static/js/main.c544055f.js.map"
   },
   "entrypoints": [
     "static/css/main.479721a1.css",
-    "static/js/main.fb7f8a41.js"
+    "static/js/main.c544055f.js"
   ]
 }
