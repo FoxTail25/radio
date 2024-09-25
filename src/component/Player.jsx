@@ -12,14 +12,11 @@ export const Player = () => {
     let playPause_state = useSelector((state) => state.play.play_pause_state)
     const dispatch = useDispatch()
 
-    // console.log("произошла загрузка компоненте плеер")
-    // console.log("selectedStation", selectedStation)
 
     useEffect(()=> {
         if(selectedStation) {
             dispatch(setHref(selectedStation.radioDot.dot_1.href))
         }
-        // console.log(playPause_state)
     })
 
 
@@ -28,7 +25,6 @@ export const Player = () => {
             dispatch(play())
         } else {
             dispatch(stop())
-
         }
     }
     function favorit(e) {

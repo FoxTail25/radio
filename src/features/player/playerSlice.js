@@ -10,7 +10,7 @@ export const playerSlice = createSlice({
         play: (state) => { state.play_pause_state = 'play' },
         stop: (state) => { state.play_pause_state = 'stop' },
         setHref:(state, actions) => {state.href_state = actions.payload},
-        resetHref:(state, actions) => {state.href_state = ''},
+        resetHref:(state) => {state.href_state = ''},
     },
 })
 
