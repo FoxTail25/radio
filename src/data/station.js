@@ -35,7 +35,7 @@ const radioStation = [
                 href: "https://montecarlo.hostingradio.ru/montecarlo96.aacp?5d63",
             },
             dot_2: {
-                href: "http://radio.gubernia.com:8000/radio9",
+                href: "https://radio.gubernia.com:8000/radio9",
             }
         }
         
@@ -47,10 +47,10 @@ const radioStation = [
         img: 'img/station_logo/eldoradio.png',
         radioDot: {
             dot_1: {
-                href: "http://emgspb.hostingradio.ru/eldoradio128.mp3",
+                href: "https://emgspb.hostingradio.ru/eldoradio128.mp3",
             },
             dot_2: {
-                href: "http://europaplus.hostingradio.ru:8000/eldoradio128.mp3",
+                href: "https://europaplus.hostingradio.ru:8000/eldoradio128.mp3",
             }
         }
         
@@ -83,7 +83,7 @@ const radioStation = [
                 location:"Moskow"
             },
             dot_2: {
-                href: "http://23.105.238.4/dfm96.aacp",
+                href: "https://23.105.238.4/dfm96.aacp",
                 // href: "https://dfm.hostingradio.ru/dfm96.aacp",
                 format: 'acc',
                 location:"Moskow",
@@ -98,7 +98,7 @@ const radioStation = [
         img: 'img/station_logo/like_fm.png',
         radioDot: {
             dot_1: {
-                href: "http://pub0101.101.ru:8000/stream/reg/mp3/128/region_like_89",
+                href: "https://pub0101.101.ru:8000/stream/reg/mp3/128/region_like_89",
                 format: 'mp3',
                 location:"Воронеж"
             },
