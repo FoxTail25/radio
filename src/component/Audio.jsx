@@ -1,17 +1,16 @@
 import { useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { play, stop } from "../features/player/playerSlice"
-import { userSelected } from "../features/station/stationSlice"
+// import { userSelected } from "../features/station/stationSlice"
 
 export default function Audio() {
 
-    const selectedStation = useSelector((state) => state.radio_station.user_selected_station)
+    // const selectedStation = useSelector((state) => state.radio_station.user_selected_station)
     const play_state = useSelector((state)=> state.play)
     const dispatch = useDispatch()
 
 
     const audio = useRef()
-
 
 
     if(play_state.play_pause_state === 'play') {
