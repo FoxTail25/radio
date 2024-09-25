@@ -17,7 +17,7 @@ export default function SelectStationBtn({ name, img, favorites }) {
 		// if (selected_station.name !== name) {
 		let userSelectedStation = [...radioStation].filter(e => e.name === name)[0]
 
-		dispatch(stop())
+		// dispatch(stop())
 
 		setTimeout(()=> dispatch(userSelected("")), 1)
 		setTimeout(()=>	dispatch(userSelected(userSelectedStation)), 2)
