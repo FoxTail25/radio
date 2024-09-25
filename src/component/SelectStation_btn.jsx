@@ -16,13 +16,12 @@ export default function SelectStationBtn({ name, img, favorites }) {
 
 		// if (selected_station.name !== name) {
 		let userSelectedStation = [...radioStation].filter(e => e.name === name)[0]
+
 		dispatch(stop())
-		dispatch(userSelected(""))
 
-
-		dispatch(userSelected(userSelectedStation))
-
-		setTimeout(() => dispatch(play()), 1)
+		setTimeout(()=> dispatch(userSelected("")), 1)
+		setTimeout(()=>	dispatch(userSelected(userSelectedStation)), 2)
+		setTimeout(() => dispatch(play()), 3)
 		// }
 	}
 
