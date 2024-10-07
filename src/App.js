@@ -11,7 +11,6 @@ function App() {
   const dispatch = useDispatch()
   
   window.ononline = (event) => {
-    
     console.log("ononline You are now connected to the network.");
     let data = JSON.parse(localStorage.getItem('radio'))
     if(data) {
@@ -19,7 +18,6 @@ function App() {
       localStorage.removeItem('radio')
     }
   };
-  
   window.onoffline = (event) => {
     console.log('offline')
     localStorage.setItem('radio', JSON.stringify([selectedStation, playPause_state]))
