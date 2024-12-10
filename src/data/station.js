@@ -393,7 +393,7 @@ const radioStation = [
         name: "Радио БизнесFM",
         category: ["pop"],
         favorites: false,
-        img: 'assets/image/radio/180/bfm-russia.png',
+        img: 'https://top-radio.ru/assets/image/radio/180/bfm-russia.png',
         radioDot: {
             dot_1: {
                 href: "https://bfm.hostingradio.ru:9075/fm",
