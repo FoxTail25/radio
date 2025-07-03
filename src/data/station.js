@@ -1,5 +1,20 @@
 const radioStation = [
     {
+        name: "Новое Радио",
+        category: [ "pop"],
+        favorites:false,
+        // img: 'https://chocoradio.ru/local/templates/site/assets/dist/images/logo.svg?6f4626bc151e087f9d70ff58807b939c',
+        img: 'https://top-radio.ru/assets/image/radio/180/novoe-v2.png',
+        radioDot: {
+            dot_1: {
+                href: "https://stream.newradio.ru/novoe96.aacp"
+            },
+            dot_2: {
+                href: "https://stream.newradio.ru/novoe96.aacp",
+            }
+        }
+    },
+    {
         name: "Шоколад",
         category: ["relax", "pop"],
         favorites:false,
